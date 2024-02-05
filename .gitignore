@@ -1,52 +1,60 @@
-# Prerequisites
-*.d
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+namespace eokulnotortalamasihesaplayici
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("E-Okul Not Ortalaması Hesaplayıcı'ya Hoşgeldiniz...");
+                Console.WriteLine("1. Sınav Notunuzu giriniz");
+                double sinav1 = Convert.ToDouble(Console.ReadLine());
+                if (sinav1 < 100)
+                {
+                    Console.WriteLine("2. Sınav Notunu Giriniz");
+            
+                }
+                else
+                {
+                    Console.WriteLine("100 üzerinde not alamazsınız");
+                    Console.Read();
+                    break;
 
-# Linker output
-*.ilk
-*.map
-*.exp
 
-# Precompiled Headers
-*.gch
-*.pch
+                }
+                double sinav2 = Convert.ToDouble(Console.ReadLine());
+                double sonuc = (sinav1 + sinav2)/2;
+                if (sinav2 < 100)
+                {
+                    if (sonuc > 50)
+                    {
+                        Console.WriteLine("Ortalamanız:" + " " + sonuc + " " + "Geçtiniz");
+                        Console.Read();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ortalamanız:" + " " + sonuc + " " + " Kaldınız");
+                        Console.Read();
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("100 üzerinde not alamazsınız.");
+                    Console.Read();
+                    break;
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+                }
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+            }
+        }
+    }
+}
